@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            border: 1px solid black;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            border-radius: 10px;
+            overflow: visible;
+        }
+
+        .box .img {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .box .img img {
+            width: 200px;
+            height: 200px;
+            display: flex;
+        }
+
+        .btn {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .btn button {
+            padding: 10px;
+            width: 100px;
+            cursor: pointer;
+        }
+
+        #yes {
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1>Bạn có bị ngu không?</h1>
+        <div class="img" >
+            <img src="https://i.pinimg.com/736x/70/90/f2/7090f2c633fa7ab7c7439bb33c053d1d.jpg" alt="">
+        </div>
+        <div class="btn">
+            <button id="nope">Có</button>
+            <button id="yes">Không</button>
+        </div>
+    </div>
+
+    <script>
+        const yes = document.getElementById('yes');
+        yes.addEventListener('mouseover', () => {
+            const a = Math.floor(Math.random() * 2) == 1 ? "+" : "-";
+            const b = Math.floor(Math.random() * 2) == 1 ? "+" : "-";
+            const top = a + Math.floor(Math.random() * 200) + "px";
+            const left = b + Math.floor(Math.random() * 400) + "px";
+            yes.style.top = top;
+            yes.style.left = left;
+        })
+
+        const nope = document.getElementById("nope");
+        nope.addEventListener('click', () => {
+            alert("Con cặc m ngu vcl");
+        })
+    </script>
+</body>
+
+</html>
